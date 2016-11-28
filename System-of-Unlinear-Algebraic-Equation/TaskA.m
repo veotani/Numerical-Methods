@@ -1,6 +1,10 @@
 function TaskA(x0, eps)
-if (x0==0)
+if (nargin==0)
     x0 = [0.5 0.5 1.5 -1 -0.5 1.5 0.5 -0.5 1.5 -1.5]';
+    eps = 1e-10;
+end
+if (nargin==1)
+    eps=1e-10;
 end
 [result , iterations ,algoperations, time] = Newton(x0, eps);
 disp('Task A');
